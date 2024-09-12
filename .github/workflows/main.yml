@@ -10,3 +10,7 @@ jobs:
         with:
           repository: ChaitanyaRangu/YoutubeAPI
           ref: main
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+     
