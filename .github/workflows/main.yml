@@ -1,0 +1,12 @@
+name: Build And test
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Energy Manager Resources
+        uses: actions/checkout@v4
+        with:
+          repository: ChaitanyaRangu/YoutubeAPI
+          ref: main
