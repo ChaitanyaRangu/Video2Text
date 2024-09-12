@@ -15,4 +15,4 @@ jobs:
             cd  /home/runner/work/
       - name: List of Files
         run: | 
-            ls
+            ls /home/runner/work/
