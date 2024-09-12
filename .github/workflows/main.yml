@@ -12,5 +12,5 @@ jobs:
           ref: main
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls 
      
