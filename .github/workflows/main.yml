@@ -10,7 +10,7 @@ jobs:
         with:
           repository: ChaitanyaRangu/YoutubeAPI
           ref: main
-          path:  ../..
+          path:  other-repo
       - name: Change Directory
         run: | 
             cd  /home/runner/work/
