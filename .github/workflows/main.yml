@@ -10,7 +10,9 @@ jobs:
         with:
           repository: ChaitanyaRangu/YoutubeAPI
           ref: main
-      - name: List files in the repository
-        run: |
-          ls 
-     
+      - name: Change Directory
+        run: | 
+            cd ../..
+      - name: List of Files
+        run: | 
+            ls
