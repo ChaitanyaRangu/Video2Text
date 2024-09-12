@@ -16,4 +16,4 @@ jobs:
             cd  /home/runner/work/
       - name: List of Files
         run: | 
-            ls /home/runner/work/
+            tree 
