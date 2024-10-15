@@ -1,0 +1,10 @@
+#
+# N4 Energy Manager
+#
+
+stackedbar.button.previousYear     = Benchmark
+stackedbar.button.previousYear.dis = Previous year Benchmark
+minutes15 = 15 Minutes
+minutes30 = 30 Minutes
+minutes60 = 60 Minutes
+year5 = 5 Years
