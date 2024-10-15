@@ -1,6 +1,6 @@
 name: Build And test
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: [workflow_dispatch, push]
 jobs:
   checkout:
     runs-on: ubuntu-latest
