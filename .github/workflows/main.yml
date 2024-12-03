@@ -42,6 +42,7 @@ jobs:
       - name: Dummy Files
         run: |
           cd  /home/runner/work/ |
+          tree |
           cp ./Video2Text/backend/app.py ./Artifacts/app.py 
       - name: Final Build
         id: set_build_name
