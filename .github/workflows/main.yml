@@ -43,6 +43,9 @@ jobs:
       - name: List of Files1
         run: | 
             tree
+      - name: Create empty file
+        run: /home/runner/work/ |  
+          mkdir -p ./Artifacts && touch ./Artifacts/app.py
       - name: Dummy Files
         run: |
           cd  /home/runner/work/ |
@@ -61,7 +64,15 @@ jobs:
     runs-on: self-hosted
     if: ${{ github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/master' && needs.create-matrix.outputs.env == 'Prod') }}
     steps:
-      
+      - name: Change Directory2
+        run: | 
+            cd  /home/runner/work/
+      - name: List of Files2
+        run: | 
+            tree
+      - name: Create empty file1
+        run: /home/runner/work/ |  
+          mkdir -p ./Artifacts && touch ./Artifacts/app.py
       - name: Zip Build
         working-directory: /home/runner/work
         run: Compress-Archive -Path .\Artifacts -DestinationPath .\Artifacts.zip -Force
