@@ -24,9 +24,6 @@ jobs:
           repository: ChaitanyaRangu/YoutubeAPI
           ref: main
           path:  other-repo
-      - name: Change Directory
-        run: | 
-            cd  /home/runner/work/
       - name: List of Files
         run: | 
             tree 
