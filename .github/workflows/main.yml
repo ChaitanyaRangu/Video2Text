@@ -41,7 +41,8 @@ jobs:
         run: tree 
       - name: Dummy Files
         run: |
-          cp ./Video2Text/backend\app.py ./Artifacts/app.py 
+          cd  /home/runner/work/ |
+          cp ./Video2Text/backend/app.py ./Artifacts/app.py 
       - name: Final Build
         id: set_build_name
         run: |
@@ -51,10 +52,13 @@ jobs:
 
   release:
     needs: [ upload_artifacts ]
+
     runs-on: self-hosted
     if: ${{ github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/master' && needs.create-matrix.outputs.env == 'Prod') }}
     steps:
+      
       - name: Zip Build
+        working-directory: /home/runner/work
         run: Compress-Archive -Path .\Artifacts -DestinationPath .\Artifacts.zip -Force
 
       - name: Create Release
