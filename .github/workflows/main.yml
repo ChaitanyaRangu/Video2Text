@@ -60,7 +60,7 @@ jobs:
   release:
     needs: [ upload_artifacts ]
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main') }}
     steps:
       - name: Change Directory2
