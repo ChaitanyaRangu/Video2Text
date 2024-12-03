@@ -34,19 +34,15 @@ jobs:
       build_version: ${{ steps.set_build_name.outputs.build_version }}
       build_name: ${{ steps.set_build_name.outputs.build_name }}
     steps:
-      - name: Change Directory1
-        run: | 
-            cd  /home/runner/work/
+  
       - name: List of Files1
         run: | 
             tree
       - name: Create empty file
-        run: /home/runner/work/ |  
+        run: |  
           mkdir -p ./Artifacts && touch ./Artifacts/app.py
       - name: Dummy Files
-        run: |
-          cd  /home/runner/work/ |
-          tree 
+        run: tree 
       - name: Final Build
         id: set_build_name
         run: |
@@ -60,17 +56,12 @@ jobs:
     runs-on: windows-latest
     if: ${{ github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main') }}
     steps:
-      - name: Change Directory2
-        run: | 
-            cd  /home/runner/work/
       - name: List of Files2
         run: | 
             tree
       - name: Create empty file1
-        run: /home/runner/work/ |  
-          mkdir -p ./Artifacts && touch ./Artifacts/app.py
+        run: mkdir -p ./Artifacts && touch ./Artifacts/app.py
       - name: Zip Build
-        working-directory: /home/runner/work
         run: Compress-Archive -Path .\Artifacts -DestinationPath .\Artifacts.zip -Force
 
       - name: Create Release
