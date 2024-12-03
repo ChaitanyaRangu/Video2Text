@@ -37,8 +37,12 @@ jobs:
       build_version: ${{ steps.set_build_name.outputs.build_version }}
       build_name: ${{ steps.set_build_name.outputs.build_name }}
     steps:
+      - name: Change Directory1
+        run: | 
+            cd  /home/runner/work/
       - name: List of Files1
-        run: tree 
+        run: | 
+            tree
       - name: Dummy Files
         run: |
           cd  /home/runner/work/ |
