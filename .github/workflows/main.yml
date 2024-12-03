@@ -41,7 +41,7 @@ jobs:
         run: tree 
       - name: Dummy Files
         run: |
-          cp .\github\Resources\dev-env-version-config.yml .\Artifacts 
+          cp ./Video2Text/backend\app.py ./Artifacts/app.py 
       - name: Final Build
         id: set_build_name
         run: |
