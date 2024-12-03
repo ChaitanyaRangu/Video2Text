@@ -14,6 +14,10 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout this
+        uses: actions/checkout@v4
+        with:
+          path: Video2Text
       - name: Checkout Energy Manager Resources
         uses: actions/checkout@v4
         with:
