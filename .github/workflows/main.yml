@@ -54,39 +54,12 @@ jobs:
         run: |
           echo "::set-output name=build_version::4.14"
           echo "::set-output name=build_name::chaiProdBuild"
-
-
-  release:
-    needs: [ upload_artifacts ]
-
+          
+  upload_artifacts1:
     runs-on: windows-latest
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.ref == 'refs/heads/main') }}
+    outputs:
+      build_version: ${{ steps.set_build_name.outputs.build_version }}
+      build_name: ${{ steps.set_build_name.outputs.build_name }}
     steps:
-      - name: List of Files2
-        run: | 
-            tree
-      - name: Create empty file1
-        run: mkdir -p ./Artifacts && touch ./Artifacts/app.py
-      - name: Zip Build
-        run: Compress-Archive -Path .\Artifacts -DestinationPath .\Artifacts.zip -Force
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        with:
-          tag_name: ${{needs.upload_artifacts.outputs.build_version}}
-          release_name: Release ${{needs.upload_artifacts.outputs.build_version}}
-          draft: false
-          prerelease: false
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./Artifacts.zip
-          asset_name: ${{needs.upload_artifacts.outputs.build_name}}.zip
-          asset_content_type: application/zip
+      - name: Station Starting
+        run: sleep 120
