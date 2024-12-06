@@ -2,6 +2,6 @@
 Taking Video as input and converts it into text
 
 # To run the FrontEnd project 
-# cd video-audio-recorde
+# cd video-audio-recor
 # npm install 
 # npm run build
