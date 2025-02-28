@@ -7,12 +7,12 @@ on:
     branches:
       - main
       - dev
-      - 'releases/*'
+      - 'release/*'
   push:
     branches:
       - main
       - dev
-      - 'releases/*'
+      - 'release/*'
 concurrency:
   group: "pages"
   cancel-in-progress: false
