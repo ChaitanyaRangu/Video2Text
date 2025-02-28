@@ -1,5 +1,5 @@
 
-name: Build And test
+name: Build And test 1
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   workflow_dispatch:
