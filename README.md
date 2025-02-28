@@ -1,5 +1,5 @@
 # Video2Text
-Taking Video as input and converts it into Text
+Taking Video as input and converts it into TexT
 
 # To run the FrontEnd project 
 # cd video-audio-recorder
