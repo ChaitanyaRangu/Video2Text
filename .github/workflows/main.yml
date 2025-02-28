@@ -1,6 +1,6 @@
 
 name: Build And test
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Build and test - ${{ github.event_name }} on branch ${{ github.ref_name }} 🚀
 on:
   workflow_dispatch:
   pull_request:
