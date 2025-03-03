@@ -7,6 +7,10 @@ on:
     types:
       - completed
 
+concurrency:
+  group: Qodana Scan - EM
+  cancel-in-progress: false
+  
 jobs:
   qodana-scan:
     runs-on: ubuntu-latest
