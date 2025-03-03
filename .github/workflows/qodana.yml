@@ -3,10 +3,9 @@ run-name: Qodana Scan - ${{ github.event_name }} on branch ${{ github.ref_name }
 
 on:
   workflow_run:
-    workflows: ["Build And test"]  # Matches the build workflow's name
+    workflows: ["Build and Test"]  # Matches the build workflow's name
     types:
       - completed
-
 concurrency:
   group: Qodana Scan - EM
   cancel-in-progress: false
