@@ -1,4 +1,4 @@
-name: Build and Test and Changed
+name: Build and Test
 run-name: Build and test - ${{ github.event_name }} on branch ${{ github.ref_name }} 🚀
 on:
   workflow_dispatch:
