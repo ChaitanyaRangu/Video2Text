@@ -1,5 +1,4 @@
-
-name: Build And test
+name: Build and Test
 run-name: Build and test - ${{ github.event_name }} on branch ${{ github.ref_name }} 🚀
 on:
   workflow_dispatch:
@@ -18,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   checkout:
-    runs-on: windows-latest
+    runs-on: [windows-latest]
     steps:
       - name: Checkout this
         uses: actions/checkout@v4
@@ -35,7 +34,7 @@ jobs:
             tree 
   upload_artifacts:
     needs: [checkout]
-    runs-on: windows-latest
+    runs-on: [windows-latest]
     outputs:
       build_version: ${{ steps.set_build_name.outputs.build_version }}
       build_name: ${{ steps.set_build_name.outputs.build_name }}
@@ -56,7 +55,8 @@ jobs:
           echo "::set-output name=build_name::chaiProdBuild"
           
   upload_artifacts1:
-    runs-on: windows-latest
+    needs: [checkout]
+    runs-on: [windows-latest]
     outputs:
       build_version: ${{ steps.set_build_name.outputs.build_version }}
       build_name: ${{ steps.set_build_name.outputs.build_name }}
