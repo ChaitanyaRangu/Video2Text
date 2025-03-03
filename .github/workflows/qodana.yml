@@ -1,0 +1,20 @@
+name: Qodana
+run-name: Qodana Scan - ${{ github.event_name }} on branch ${{ github.ref_name }} 🚀
+
+on:
+  workflow_run:
+    workflows: ["Build and Test"]  # Matches the build workflow's name
+    types:
+      - completed
+concurrency:
+  group: Qodana Scan - EM
+  cancel-in-progress: false
+  
+jobs:
+  qodana-scan:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Dummy Qodana Scan
+        run: echo "Running Qodana scan..."
